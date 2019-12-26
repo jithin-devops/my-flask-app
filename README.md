@@ -14,6 +14,12 @@
 **Start my-app using helm with below command**
 
 ```
+cd my-flask-app
+eval $(minikube docker-env)
+docker build -t my_app:v1 .
+```
+
+```
 $ helm install  my-app my-flask-app
 ```
 
