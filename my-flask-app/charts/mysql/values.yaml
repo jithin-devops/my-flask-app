@@ -1,0 +1,22 @@
+replicaCount: 1
+mysql:
+  service:
+    externalPort: 3306
+    internalPort: 3306
+  name: mysql
+  image:
+    repository: mysql
+    tag: 5.6
+persistence:
+  enabled: true
+  accessMode: ReadWriteOnce
+  size: 2Gi
+  storageClass: standard
+configurationFiles:
+  initdb.sql: |
+    CREATE DATABASE IF NOT EXISTS my_db;
+    USE my_db;
+    CREATE TABLE IF NOT EXISTS my_table(my_column TEXT);
+    INSERT INTO `my_table`(my_column) VALUES ("HI PERSONIO I'M MR.MICROSERVICE FROM KUBERNETES");
+secret:
+  name: my-flask-app

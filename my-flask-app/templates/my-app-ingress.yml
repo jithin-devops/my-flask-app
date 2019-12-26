@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ template "my-flask-app.name" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ template "my-flask-app.name" . }}
+spec:
+  rules:
+  - host: {{ .Values.ingress.host }}
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: {{ template "my-flask-app.name" . }}
+          servicePort: {{ .Values.service.externalPort }}

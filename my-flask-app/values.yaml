@@ -1,0 +1,13 @@
+replicaCount: 1
+image:
+  repository: my_app
+  tag: v1
+  pullPolicy: Never
+service:
+  externalPort: 5000
+  internalPort: 5000
+ingress:
+  host: hello.personio
+myappRootPassword: personio
+myappRootUsername: root
+
