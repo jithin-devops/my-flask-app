@@ -1,14 +1,14 @@
 **Dependency:**
 
  - Install minikube in your MBP
-```$ minikube version: v0.27.0```
+```minikube version: v0.27.0```
 
  - Install helm
-```$ brew install kubernetes-helm```
-```$ helm version: "v3.0.2"```
+```brew install kubernetes-helm```
+```helm version: "v3.0.2"```
 - Enable minikube ingress
 
-```$ minikube addons enable ingress```
+```minikube addons enable ingress```
  
 
 
